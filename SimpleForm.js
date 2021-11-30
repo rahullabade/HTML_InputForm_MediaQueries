@@ -30,11 +30,11 @@ email.addEventListener('input',function(){
 
 const password = document.querySelector("#pwd");
 const errPass = document.querySelector(".pwd-error");
-password.addEventListener('input',function(){
-    let passRegex = RegExp("^[a-zA-Z]){8}$");
-    if(passRegex.test(password.value)){
-        errPass.textContent="";
-    }else{
-        errPass.textContent="Password is incorrect";
-    }
+password.addEventListener('input', function () {
+  let passRegex = RegExp("^((?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*`~_+]).{8,20})$");
+  if (passRegex.test(password.value)) {
+    errPass.textContent = "";
+  } else {
+    errPass.textContent = "Password is incorrect";
+  }
 });
